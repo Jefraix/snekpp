@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Snekplusplus Sign In</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="{{ url_for('static', filename='CSS/style.css') }}" rel="stylesheet" /> 
+    </head>
+    <body>
+        <div class="area" >
+            <ul class="circles">
+                <li>+</li>
+                <li>+</li>
+                <li>+</li>
+                <li>+</li>
+                <li>+</li>
+                <li>+</li>
+                <li>+</li>
+                <li>+</li>
+                <li>+</li>
+                <li>+</li>
+            </ul>
+        </div >
+        
+        <div class="content">
+            <div class="title"><p>User <span>Login</span></p></div>
+            <div class="login-form-container">
+                <div><p>Enter Your Login Information</p></div>
+                <div class="login-form">
+                    <form method="POST" action="">
+                        {{ form.hidden_tag() }}
+                        <p>
+                            {{ form.username.label }}<br>
+                            {{ form.username(size=32) }}<br>
+                            {% for error in form.username.errors %}
+                            <span style="color: red;">[{{ error }}]</span>
+                            {% endfor %}
+                        </p>
+                        <p>
+                            {{ form.password.label }}<br>
+                            {{ form.password(size=32) }}<br>
+                            {% for error in form.password.errors %}
+                            <span style="color: red;">[{{ error }}]</span>
+                            {% endfor %}
+                        </p>
+                        {% with messages = get_flashed_messages() %}
+                            {% if messages %}
+                                <p style="color: red;">{{ messages[0] }}.</p>
+                            {% endif %}
+                        {% endwith %}
+                        <p>{{ form.submit(class="login-button") }}</p>
+                    </form>
+                </div>
+
+                <div>
+                    <p>Go to <a href="{{ url_for('auth.register') }}">user sign up</a></p>
+                </div>
+                <div><p>Forgot <a href="{{ url_for('mainr.forgot_password') }}">Password</a></p></div>
+                <div>
+                    <p><a href="{{ url_for('mainr.index') }}">Back to Home</a></p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html> 

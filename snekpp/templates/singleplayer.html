@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Snek++ | Single Player Game</title>
+    <script>
+      function htmlPostScore(score){
+        var post_url = "http://127.0.0.1:5000/score"
+        var params = "username={{username}}&newScore=" + score;
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", post_url, true);
+
+        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        xhr.send(params);
+      }
+    </script>
+    <style>
+      body {
+        background-color: black;
+      }
+
+      #unity-canvas {
+        height: 100%;
+        width: 100%;
+        background: #231F20
+      }
+    </style>
+  </head>
+  <body style="text-align: center">
+    <div style="color:white">
+      <p>
+        You are playing singleplayer. <br>
+        <a href="{{ url_for('mainr.profile') }}">Go back to profile</a>
+         or 
+        <a href="{{ url_for('mainr.multiplayer') }}"> Join Multiplayer</a>.
+      </p>
+    </div>
+    <canvas id="unity-canvas"></canvas>
+    <script src="{{ url_for('static', filename='GameFiles/snekppAJAX.loader.js') }}"></script>
+    <script>
+      createUnityInstance(document.querySelector("#unity-canvas"), {
+        dataUrl: "{{ url_for('static', filename='GameFiles/snekppAJAX.data') }}",
+        frameworkUrl: "{{ url_for('static', filename='GameFiles/snekppAJAX.framework.js') }}",
+        codeUrl: "{{ url_for('static', filename='GameFiles/snekppAJAX.wasm') }}",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "CSC210",
+        productName: "snek++",
+        productVersion: "1.0",
+        matchWebGLToCanvasSize: true,
+        // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+      }).then((unityInstance) => {
+        unityInstance.SendMessage("Head", "setUsername", "{{ username }}");
+      });
+    </script>
+  </body>
+</html>

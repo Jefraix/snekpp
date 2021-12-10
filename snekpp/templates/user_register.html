@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>User Sign Up</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="{{ url_for('static', filename='CSS/style.css') }}" rel="stylesheet" /> 
+    </head>
+    <body>
+        <div class="area" >
+            <ul class="circles">
+                <li>+</li>
+                <li>+</li>
+                <li>+</li>
+                <li>+</li>
+                <li>+</li>
+                <li>+</li>
+                <li>+</li>
+                <li>+</li>
+                <li>+</li>
+                <li>+</li>
+            </ul>
+        </div >
+
+        <div class="content">
+            <div class="title"><p>User <span>Sign Up</span></p></div>
+            <div class="register-form-container">
+                <div><p>Enter Your Information</p></div>
+                
+                <form method="POST" action="">
+                    {{ form.hidden_tag() }}
+                    <p>
+                        {{ form.username.label }}<br>
+                        {{ form.username(size=32) }}<br>
+                        {% for error in form.username.errors %}
+                        <span style="color: red;">{{ error }}</span>
+                        {% endfor %}
+                    </p>
+                    <p>
+                        {{ form.email.label }}<br>
+                        {{ form.email(size=32) }}<br>
+                        {% for error in form.email.errors %}
+                        <span style="color: red;">{{ error }}</span>
+                        {% endfor %}
+                    </p>
+                    <p>
+                        {{ form.password.label }}<br>
+                        {{ form.password(size=32) }}<br>
+                        {% for error in form.password.errors %}
+                        <span style="color: red;">{{ error }}</span>
+                        {% endfor %}
+                    </p>
+                    <p>
+                        {{ form.password2.label }}<br>
+                        {{ form.password2(size=32) }}<br>
+                        {% for error in form.password2.errors %}
+                        <span style="color: red;">{{ error }}</span>
+                        {% endfor %}
+                    </p>
+
+                    <p>{{ form.submit(class="register-button") }}</p>
+                </form>
+
+                <p>Go to <a href="{{ url_for('auth.login') }}">user login</a></p>
+            </div>
+        </div>
+
+    </body>
+</html> 

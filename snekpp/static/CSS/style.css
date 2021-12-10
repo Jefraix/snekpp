@@ -1,0 +1,469 @@
+body {
+    background-color: black;
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+    font-size: 100%;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.content {
+    margin-top: 140px;
+    text-align: center;
+    z-index: 2;
+}
+
+.title {
+    color: white;
+    /*text-shadow: 2px 2px 4px #000000;*/
+    font-family: 'Arial', sans-serif;
+    font-size: 3em;
+    margin-bottom: 140px;
+    z-index: 2;
+}
+
+.title span {
+    font-family: 'Tahoma', sans-serif;
+    color: greenyellow;
+    z-index: 3;
+}
+
+.choice-container {
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+    width: 18%;
+    z-index: 3;
+}
+
+a:link {
+    color: black;
+    text-decoration:none;
+}
+
+a:visited {
+    color: black;
+    text-decoration:none;
+}
+
+.choice {
+    color: black;
+    margin-top: 35px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    font-size: 1.5em;
+}
+
+.choice:hover {
+    background: greenyellow;
+    color: black;
+    transition: 0.2s;
+}
+
+.form-container {
+    background-color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+    width: 20%;
+    font-family: 'Arial', sans-serif;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.snek-button {
+    padding: .5rem 1rem;
+    background: greenyellow;
+    color: black;
+    border: 2px solid black;
+    border-radius: .25rem;
+    font-size: 1.08em;
+    font-family: 'Arial', sans-serif;
+}
+
+.snek-button:hover {
+    border: 4px solid black;
+    transition: 0.25s;
+    font-weight: bold;
+}
+
+/* USER SIGN IN CLASSES */
+
+.login-form-container {
+    background-color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+    width: 20%;
+    font-family: 'Arial', sans-serif;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.login-button {
+    padding: .5rem 1rem;
+    background: greenyellow;
+    color: black;
+    border: 2px solid black;
+    border-radius: .25rem;
+    font-size: 1.08em;
+    font-family: 'Arial', sans-serif;
+}
+
+.login-button:hover {
+    border: 4px solid black;
+    transition: 0.25s;
+    font-weight: bold;
+}
+
+/* USER REGISTER CLASSES */
+
+.register-form-container {
+    background-color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+    width: 20%;
+    font-family: 'Arial', sans-serif;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.register-button {
+    padding: .5rem 1rem;
+    background: greenyellow;
+    color: black;
+    border: 2px solid black;
+    border-radius: .25rem;
+    font-size: 1.08em;
+    font-family: 'Arial', sans-serif;
+}
+
+.register-button:hover {
+    border: 4px solid black;
+    transition: 0.25s;
+    font-weight: bold;
+}
+
+/* PROFILE CLASSES*/
+
+.profile-container {
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+    width: 50%;
+}
+
+.head-section {
+    text-align: center;
+}
+
+.profile-title {
+    color: white;
+    font-family: 'Arial', sans-serif;
+    font-size: 3em;
+    margin-bottom: 70px;
+}
+
+.profile-title span {
+    font-family: 'Tahoma', sans-serif;
+    color: greenyellow;
+}
+
+.search-section {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.info-section {
+    display: flex;
+    flex-direction: row;
+}
+
+.profile-box {
+    box-sizing: border-box;
+    background-color: white;
+    margin: 15px;
+    border-radius: 5px;
+    flex-grow: 1;
+}
+
+.profile-im {
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+    width: 80%;
+    height: 200px;
+}
+
+.pr-im {
+    display: block;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+}
+
+.profile-choices {
+    height: auto;
+    margin: 0 auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    position: relative;
+    text-align: center;
+    width: 60%;
+}
+
+.profile-checkl {
+    margin-top: 10px;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: 'Arial', sans-serif;
+    font-size: 1em;
+    text-align: center;
+}
+
+.profile-checkl:hover {
+    background: rgb(0, 110, 255);
+    color: white;
+    transition: 0.2s;
+}
+
+.profile-logout {
+    margin-top: 10px;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: 'Arial', sans-serif;
+    font-size: 1em;
+    text-align: center;
+}
+
+.profile-logout:hover {
+    background: red;
+    color: white;
+    transition: 0.2s;
+}
+
+.info-box {
+    /*background-color: white; */
+    margin: 15px;
+    border-radius: 5px;
+    flex-grow: 3;
+    display: flex;
+    flex-direction: column;
+}
+
+.subtitle {
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Arial', sans-serif;
+    font-size: 1.5em;
+}
+
+.single-info {
+    margin: 15px;
+    flex-grow: 1;
+}
+
+.single-score {
+    color: greenyellow;
+    margin: 5%;
+    border: 2px solid white;
+    border-radius: 5px;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    font-size: 2em;
+}
+
+.multi-info {
+    margin: 15px;
+    flex-grow: 1;
+}
+
+.multi-score {
+    color: greenyellow;
+    margin: 5%;
+    border: 2px solid white;
+    border-radius: 5px;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    font-size: 2em;
+}
+
+.choice-section {
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+    width: 35%;
+    margin-bottom: 70px;
+}
+
+.profile-request {
+    margin-top: 15px;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: 'Arial', sans-serif;
+    font-size: 1em;
+    text-align: center;
+    border: transparent;
+}
+
+.profile-request:hover {
+    background: rgb(0, 196, 0);
+    color: black;
+    transition: 0.2s;
+}
+
+/* BACKGROUND */
+
+.area{
+    box-sizing: border-box;
+    background: black;  
+    background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
+    z-index: 1;
+}
+
+.circles{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.circles li{
+    color: rgba(153, 255, 0, 0.534);
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    /*background: rgba(153, 255, 0, 0.322); */
+    animation: animate 25s linear infinite;
+    bottom: -150px;
+    font-weight: bolder;
+}
+
+.circles li:nth-child(1){
+    left: 25%;
+    width: 80px;
+    height: 80px;
+    font-size: 1em;
+    animation-delay: 0s;
+    font-size: 3em;
+}
+
+
+.circles li:nth-child(2){
+    left: 10%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 2s;
+    animation-duration: 12s;
+    font-size: 1.5em;
+}
+
+.circles li:nth-child(3){
+    left: 70%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 4s;
+    font-size: 1.5em;
+}
+
+.circles li:nth-child(4){
+    left: 40%;
+    width: 60px;
+    height: 60px;
+    animation-delay: 0s;
+    animation-duration: 18s;
+    font-size: 2m;
+}
+
+.circles li:nth-child(5){
+    left: 65%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 0s;
+    font-size: 1.5em;
+}
+
+.circles li:nth-child(6){
+    left: 75%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 3s;
+    font-size: 4em;
+}
+
+.circles li:nth-child(7){
+    left: 35%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 7s;
+    font-size: 6em;
+}
+
+.circles li:nth-child(8){
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    animation-delay: 15s;
+    animation-duration: 45s;
+    font-size: 2em;
+}
+
+.circles li:nth-child(9){
+    left: 20%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 2s;
+    animation-duration: 35s;
+    font-size: 1em;
+}
+
+.circles li:nth-child(10){
+    left: 80%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+    font-size: 6em;
+}
+
+
+@keyframes animate {
+
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+
+    100%{
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+}

@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Multiplayer Leaderboard</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            h1{
+                color: white;
+                text-align: center;
+                margin: 50px;
+                font-size: 40px;
+            }
+
+            .special{
+                color:green;
+            }
+
+            .content{
+                background-color: black;
+            }
+
+            .t{
+                background-color: white;
+                padding: 25px;
+                text-align: center;
+                margin-top: 25px;
+                margin-bottom: 25px;
+                margin-left: 100px;
+                margin-right: 100px;
+                border-radius:10px;
+            }
+
+            .table-container {
+                height: auto;
+                margin: 0 auto;
+                position: relative;
+                width: 50%;
+            }
+
+            .table-text {
+                font-size: 1.5em;
+                font-weight: bold;
+                font-family: 'Arial', sans-serif;
+            }
+
+            .name-text {
+                font-size: 1.5em;
+                font-weight: bold;
+                font-family: 'Arial', sans-serif;
+                color:green;
+                text-transform: capitalize;
+            }
+
+            table, th, td {
+                border: 2px solid black;
+                border-collapse: collapse;
+            }
+            th, td{
+                border-style: groove;
+                padding: 15px;
+            }
+
+            .homepageLink{
+                text-align: right;
+                background-color: white;
+                padding: 2px;
+                margin-top: 25px;
+                margin-bottom: 25px;
+                margin-right: 100px;
+                margin-left: 100px;
+                border-radius: 10px;
+            }
+
+            p{
+                padding-right: 35px;
+            }
+
+        </style>
+    </head>
+    <body class = "content">
+        <h1>The Leaderboard for <div class="special">Multiplayer</div></h1>
+        <div class="t">
+            <table class="table-container">
+                {% for item in stuff|sort(attribute='1', reverse = True) %}
+                <tr>
+                <td class="name-text">{{item.0}}</td>
+                <td class="table-text">{{item.1}}</td>
+                <td class="table-text">{{item.2}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+        <div class="homepageLink">
+            <p><a href="{{ url_for('mainr.index') }}">Back to the Home</a></p>
+        </div>
+
+    </body>
+</html>

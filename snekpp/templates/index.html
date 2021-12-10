@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Snek++</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="{{ url_for('static', filename='CSS/style.css') }}" rel="stylesheet">
+    </head>
+    <body>
+        
+        <div class="content">
+            <div class="title"><p>Welcome to <span>Snek++</span>!</p></div>
+
+            <div class="choice-container">
+                <a href="{{ url_for('auth.login') }}"><div class="choice">Sign in</div></a>
+                <a href="{{ url_for('auth.register') }}"><div class="choice">Register an account</div></a>
+            </div>
+
+            <div class="choice-container">
+                <div class="subtitle" style="margin-top: 70px;">
+                    <p>Leader<span style="color: greenyellow;">boards</span></p>
+                </div>
+                <a href="{{ url_for('mainr.leaderboard_single') }}"><div class="choice">Singleplayer</div></a>
+                <a href="{{ url_for('mainr.leaderboard_multi') }}"><div class="choice">Multiplayer</div></a>
+            </div>
+
+            <div class="area" >
+                <ul class="circles">
+                    <li>+</li>
+                    <li>+</li>
+                    <li>+</li>
+                    <li>+</li>
+                    <li>+</li>
+                    <li>+</li>
+                    <li>+</li>
+                    <li>+</li>
+                    <li>+</li>
+                    <li>+</li>
+                </ul>
+            </div >
+        </div>
+    </body>
+</html> 

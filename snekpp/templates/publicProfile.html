@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{username}}'s Profile</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="{{ url_for('static', filename='CSS/style.css') }}" rel="stylesheet" /> 
+        <script type="text/javascript">
+            function checkStatus(){
+                var status = ('{{ status}}');
+                if (status == 1 ){
+                    document.getElementById("friendButton").value="Unfollow";
+                }
+            }
+
+        </script>
+
+    </head>
+    <body onLoad="checkStatus();">
+        <div class="area" >
+            <ul class="circles">
+               <li>+</li>
+               <li>+</li>
+               <li>+</li>
+               <li>+</li>
+               <li>+</li>
+               <li>+</li>
+               <li>+</li>
+               <li>+</li>
+               <li>+</li>
+               <li>+</li>
+            </ul>
+        </div >
+
+        <div class="profile-container">
+            <div class="head-section">
+                <div class="profile-title"><p>Welcome To <span>{{ username }}</span>'s Profile!</p></div>
+            </div>
+            <div class="info-section">
+                <div class="profile-box">
+                    <div class="profile-im">
+                        <img class="pr-im" src="{{ url_for('static', filename='snake_doodle.png') }}">
+                    </div>
+                    <div class="profile-choices">
+                        <form action="{{ url_for('auth.follow') }}" method= "post">
+                            <input type ="hidden" name ="friendUsername" value={{username}}>
+                            <input id="friendButton" type="submit" class="profile-request" value="Follow!"/>
+                        </form >
+                    </div>
+                </div>
+                <div class="info-box">
+                    <div class="single-info">
+                        <div class="subtitle">Single-Player High Score</div>
+                        <div class="single-score">{{ sphs }}</div>
+                    </div>
+                    <div class="multi-info">
+                        <div class="subtitle">Multi-Player High Score</div>
+                        <div class="multi-score">{{ mphs }}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="choice-section">
+                <a href="{{ url_for('mainr.index')}}"><div class="choice">Return to HomePage</div></a>
+            </div>
+            <div class="room-section">
+                
+            </div>
+        </div>
+    </body>
+</html> 

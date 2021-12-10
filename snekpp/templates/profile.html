@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Profile</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="{{ url_for('static', filename='CSS/style.css') }}" rel="stylesheet" /> 
+    </head>
+    <body >
+        <div class="area" >
+            <ul class="circles">
+                <li>+</li>
+                <li>+</li>
+                <li>+</li>
+                <li>+</li>
+                <li>+</li>
+                <li>+</li>
+                <li>+</li>
+                <li>+</li>
+                <li>+</li>
+                <li>+</li>
+            </ul>
+        </div >
+        
+        <div class="profile-container">
+            <div class="head-section">
+                <div class="profile-title"><p>Welcome, <span>{{ username }}</span>!</p></div>
+            </div>
+            <!--Search bar-->
+            <div class ="search-section">
+                <form action="{{ url_for('auth.search') }}" method="post">
+                    <label class = "subtitle" for="friendUsername">Search User:</label><br>
+                    <input type="text" name="friendUsername" placeholder="Enter Name"><br>
+                    <input type="submit" value="Submit" class="profile-logout"><br>
+                </form>
+            </div>
+            <div class="info-section">
+                <div class="profile-box">
+                    <div class="profile-im">
+                        <img class="pr-im" src="{{ url_for('static', filename='snake_doodle.png') }}">
+                    </div>
+                    <div class="profile-choices">
+                        <a href="{{ url_for('auth.logout')}}"><div class="profile-logout">Logout</div></a>
+                    </div>
+                </div>
+                <div class="info-box">
+                    <div class="single-info">
+                        <div class="subtitle">Single-Player High Score</div>
+                        <div class="single-score">{{ sphs }}</div>
+                        <a href="{{ url_for('mainr.leaderboard_single_follow') }}">
+                            <div class="profile-checkl">Single Scores of Players You Follow</div>
+                        </a>
+                    </div>
+                    <div class="multi-info">
+                        <div class="subtitle">Multi-Player Wins</div>
+                        <div class="multi-score">{{ mphs }}</div>
+                        <a href="{{ url_for('mainr.leaderboard_multi_follow') }}">
+                            <div class="profile-checkl">Multiplayer Scores of Players You Follow</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="choice-section">
+                <div class="title" style="margin-top: 35px; margin-bottom: 35px;">Play</div>
+                <a href="{{ url_for('mainr.singleplayer') }}"><div class="choice">Singleplayer</div></a>
+                <a href="{{ url_for('mainr.multiplayer') }}"><div class="choice">Multiplayer</div></a>
+            </div>
+            <div class="room-section">
+                
+            </div>
+        </div>
+    </body>
+</html> 
