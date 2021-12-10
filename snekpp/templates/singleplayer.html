@@ -6,7 +6,7 @@
     <title>Snek++ | Single Player Game</title>
     <script>
       function htmlPostScore(score){
-        var post_url = "http://127.0.0.1:5000/score"
+        var post_url = "https://snekpp.herokuapp.com/score"
         var params = "username={{username}}&newScore=" + score;
 
         var xhr = new XMLHttpRequest();
