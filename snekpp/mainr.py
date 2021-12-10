@@ -133,7 +133,7 @@ def send_reset_email(user):
     password = 'theoSucks69'
 
     subject = "Reset Password Link for Snek++"
-    text = "Click on this link to reset your password: " + "http://127.0.0.1:5000/password_recovery/" + token
+    text = "Click on this link to reset your password: " + "https://snekpp.herokuapp.com/password_recovery/" + token
     message = 'Subject: {}\n\n{}'.format(subject, text)
 
     server = smtplib.SMTP('smtp.gmail.com', 587)
